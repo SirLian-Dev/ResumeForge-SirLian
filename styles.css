@@ -1,0 +1,992 @@
+/*======================================================
+  ResumeForge
+  Stylesheet v1.0
+  Author: Julián Ramírez
+======================================================*/
+
+/*==============================
+ROOT
+==============================*/
+
+:root{
+
+    --primary:#C1121F;
+    --primary-dark:#8F0E18;
+
+    --black:#111111;
+    --black-light:#1F1F1F;
+
+    --white:#FFFFFF;
+    --gray-50:#F8F8F8;
+    --gray-100:#EFEFEF;
+    --gray-200:#DDDDDD;
+    --gray-300:#CCCCCC;
+    --gray:#666666;
+
+    --shadow:
+        0 20px 45px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.30s ease;
+
+    --container:1180px;
+
+}
+
+/*==============================
+RESET
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--gray-50);
+
+    color:var(--black);
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+strong{
+
+    color:var(--black);
+
+}
+
+/*==============================
+LAYOUT
+==============================*/
+
+.resume{
+
+    width:min(95%,var(--container));
+
+    margin:50px auto;
+
+    background:var(--white);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+/*==============================
+HERO
+==============================*/
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:70px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fafafa 100%
+    );
+
+}
+
+.hero__content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.hero__badge{
+
+    width:max-content;
+
+    background:rgba(193,18,31,.08);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:.82rem;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+.hero__title{
+
+    font-size:4rem;
+
+    line-height:1;
+
+    font-weight:900;
+
+}
+
+.hero__title span{
+
+    display:block;
+
+    color:var(--primary);
+
+}
+
+.hero__subtitle{
+
+    font-size:1.45rem;
+
+    color:var(--gray);
+
+    font-weight:500;
+
+}
+
+.hero__description{
+
+    font-size:1.05rem;
+
+    color:#555;
+
+    max-width:700px;
+
+}
+
+.hero__contact{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:10px;
+
+    font-weight:600;
+
+}
+
+.hero__contact a{
+
+    transition:var(--transition);
+
+}
+
+.hero__contact a:hover{
+
+    color:var(--primary);
+
+}
+
+.hero__photo{
+
+    justify-self:end;
+
+}
+
+.hero__photo img{
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:8px solid white;
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*==============================
+SECTIONS
+==============================*/
+
+.section{
+
+    padding:60px 70px;
+
+}
+
+.section+.section{
+
+    border-top:1px solid var(--gray-100);
+
+}
+
+.section__header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.section__number{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
+
+.section__header h2{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+}
+
+.paragraph{
+
+    color:#555;
+
+    margin-bottom:20px;
+
+    text-align:justify;
+
+}
+
+/*==============================
+FEATURED
+==============================*/
+
+.featured{
+
+    background:#FCFCFC;
+
+}
+
+.featured__card{
+
+    display:grid;
+
+    grid-template-columns:230px 1fr;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
+.featured__logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #111,
+        #222
+    );
+
+    color:white;
+
+    height:220px;
+
+    border-radius:22px;
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.featured__content h3{
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+}
+
+.featured__content p{
+
+    color:#555;
+
+    margin-bottom:18px;
+
+}
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.tags span{
+
+    background:white;
+
+    border:1px solid var(--gray-200);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-size:.90rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.tags span:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-color:var(--primary);
+
+}
+
+/*==============================
+PROJECTS
+==============================*/
+
+.projects{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.project{
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid var(--gray-100);
+
+    transition:var(--transition);
+
+    background:white;
+
+}
+
+.project:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.project h3{
+
+    font-size:1.2rem;
+
+    margin-bottom:15px;
+
+}
+
+.project p{
+
+    color:#666;
+
+}
+
+/*==============================
+SKILLS GRID
+==============================*/
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+
+}
+
+.skill-category{
+
+    background:#ffffff;
+
+    border:1px solid var(--gray-100);
+
+    border-radius:18px;
+
+    padding:28px;
+
+    transition:var(--transition);
+
+}
+
+.skill-category:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.skill-category h3{
+
+    color:var(--primary);
+
+    font-size:1.05rem;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.skill-category ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.skill-category li{
+
+    color:#555;
+
+    position:relative;
+
+    padding-left:18px;
+
+}
+
+.skill-category li::before{
+
+    content:"";
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    position:absolute;
+
+    left:0;
+
+    top:11px;
+
+}
+
+/*==============================
+ENGINEERING PRINCIPLES
+==============================*/
+
+.principles{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.principle{
+
+    background:white;
+
+    border:1px solid var(--gray-100);
+
+    padding:18px 22px;
+
+    border-radius:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.principle:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+/*==============================
+TIMELINE
+==============================*/
+
+.timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.timeline-item{
+
+    display:grid;
+
+    grid-template-columns:180px 1fr;
+
+    gap:35px;
+
+    align-items:flex-start;
+
+}
+
+.timeline-year{
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    font-size:1rem;
+
+}
+
+.timeline-content{
+
+    border-left:3px solid var(--primary);
+
+    padding-left:24px;
+
+}
+
+.timeline-content h3{
+
+    margin-bottom:10px;
+
+    font-size:1.15rem;
+
+}
+
+.timeline-content p{
+
+    color:#555;
+
+}
+
+/*==============================
+LANGUAGES
+==============================*/
+
+.languages{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.language{
+
+    background:white;
+
+    border:1px solid var(--gray-100);
+
+    border-radius:18px;
+
+    padding:28px;
+
+}
+
+.language h3{
+
+    color:var(--primary);
+
+    margin-bottom:12px;
+
+    font-size:1.2rem;
+
+}
+
+.language p{
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.language small{
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+/*==============================
+FOOTER
+==============================*/
+
+.footer{
+
+    background:#111111;
+
+    color:white;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:50px;
+
+    padding:60px 70px;
+
+}
+
+.footer__left h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
+}
+
+.footer__left p{
+
+    color:#cccccc;
+
+    max-width:650px;
+
+}
+
+.footer__right ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.footer__right strong{
+
+    color:white;
+
+    display:block;
+
+    margin-bottom:6px;
+
+}
+
+/*==============================
+SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f5f5f5;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media (max-width:1100px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero__content{
+
+align-items:center;
+
+}
+
+.hero__photo{
+
+justify-self:center;
+
+}
+
+.featured__card{
+
+grid-template-columns:1fr;
+
+}
+
+.projects{
+
+grid-template-columns:1fr;
+
+}
+
+.skills-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.principles{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.resume{
+
+width:100%;
+
+margin:0;
+
+border-radius:0;
+
+}
+
+.hero,
+.section,
+.footer{
+
+padding:40px 30px;
+
+}
+
+.hero__title{
+
+font-size:2.8rem;
+
+}
+
+.hero__subtitle{
+
+font-size:1.1rem;
+
+}
+
+.hero__photo img{
+
+width:220px;
+
+height:220px;
+
+}
+
+.skills-grid,
+.languages,
+.principles{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline-item{
+
+grid-template-columns:1fr;
+
+gap:15px;
+
+}
+
+.timeline-content{
+
+padding-left:18px;
+
+}
+
+.section__header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+}
+
+/*==============================
+PRINT
+==============================*/
+
+@media print{
+
+body{
+
+background:white;
+
+}
+
+.resume{
+
+width:100%;
+
+margin:0;
+
+box-shadow:none;
+
+border-radius:0;
+
+}
+
+.hero,
+.section,
+.footer{
+
+padding:28px;
+
+}
+
+.project:hover,
+.skill-category:hover,
+.principle:hover{
+
+transform:none;
+
+box-shadow:none;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+}
+
