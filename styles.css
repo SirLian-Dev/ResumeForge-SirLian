@@ -67,9 +67,8 @@ body{
 
     font-family:'Inter',sans-serif;
 
-    font-size:16px;
-
-    line-height:1.7;
+    font-size:15px !important;
+    line-height:1.45;
 
 }
 
@@ -100,9 +99,9 @@ LAYOUT
 
 .resume{
 
-    width:min(95%,var(--container));
-
-    margin:45px auto;
+    width:100%;
+    max-width:1200px;
+    margin:20px auto;
 
     background:white;
 
@@ -122,13 +121,13 @@ HERO
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:minmax(0,2fr) 260px;
 
-    gap:50px;
+    gap:15px !important;
 
     align-items:center;
 
-    padding:55px;
+    padding:35px 40px;
 
     background:
 
@@ -174,7 +173,7 @@ HERO
 
 .hero__title{
 
-    font-size:3.5rem;
+    font-size:2.3rem !important;
 
     line-height:1;
 
@@ -192,7 +191,7 @@ HERO
 
 .hero__subtitle{
 
-    font-size:1.45rem;
+    font-size:1rem !important;
 
     font-weight:600;
 
@@ -244,9 +243,11 @@ HERO
 
 .hero__photo img{
 
-    width:240px;
+    display:block;
 
-    height:240px;
+    width:130px !important;
+
+    height:auto;
 
     object-fit:cover;
 
@@ -266,7 +267,9 @@ SECCIONES
 
 .section{
 
-    padding:40px 55px;
+    padding:18px 25px !important;
+
+    overflow:hidden;
 
 }
 
@@ -346,7 +349,7 @@ CAREERTRACK
 
     grid-template-columns:230px 1fr;
 
-    gap:35px;
+    gap:18px !important;
 
     align-items:center;
 
@@ -354,8 +357,8 @@ CAREERTRACK
 
 .featured__logo{
 
-    width:230px;
-    height:230px;
+    width:150px !important;
+    height:150px !important;
 
     overflow:hidden;
 
@@ -400,7 +403,7 @@ CAREERTRACK
 
     flex-wrap:wrap;
 
-    gap:12px;
+    gap:6px !important;
 
     margin-top:20px;
 
@@ -408,7 +411,7 @@ CAREERTRACK
 
 .tags span{
 
-    padding:10px 18px;
+    padding:6px 12px !important;
 
     border-radius:999px;
 
@@ -416,7 +419,7 @@ CAREERTRACK
 
     background:white;
 
-    font-size:.9rem;
+    font-size:.75rem !important;
 
     font-weight:600;
 
@@ -456,7 +459,7 @@ PROYECTOS
 
     border-radius:20px;
 
-    padding:24px;
+    padding:20px;
 
     transition:var(--transition);
 
@@ -724,7 +727,7 @@ FOOTER
 
     color:white;
 
-    padding:55px;
+    padding:18px 25px !important;
 
 }
 
@@ -778,7 +781,7 @@ EFECTOS
 .section,
 .footer{
 
-    animation:fadeUp .7s ease;
+    animation:none !important;
 
 }
 
@@ -944,41 +947,62 @@ RESPONSIVE
 
 }
 
-/*======================================================
-IMPRESIÓN A4
-======================================================*/
+/* ==========================
+   IMPRESIÓN PDF
+========================== */
 
-@page{
+@media print {
 
-    size:A4 portrait;
-
-    margin:10mm;
-
-}
-
-@media print{
+    html,
+    body{
+        width:210mm;
+        height:auto;
+        margin:0;
+        padding:0;
+        overflow:visible;
+        background:#ffffff;
+    }
 
     body{
-
-        background:white;
-
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
     }
 
     .resume{
-
         width:100%;
-
+        max-width:none;
         margin:0;
+        padding:0;
+    }
 
-        border-radius:0;
+    .hero{
+        display:flex !important;
+        align-items:center;
+        justify-content:space-between;
+        gap:30px;
+        padding:28px 35px;
+    }
 
-        box-shadow:none;
+    .hero__content{
+        flex:1;
+    }
+
+    .hero__photo{
+
+        width:170px;
+
+        flex:none;
 
     }
 
-    .hero,
-    .section,
-    .footer{
+    section{
+
+        padding:25px 35px;
+
+    }
+
+    .project-card,
+    .skill-card{
 
         break-inside:avoid;
 
@@ -986,25 +1010,26 @@ IMPRESIÓN A4
 
     }
 
+    a:hover,
+    button:hover,
     .project:hover,
     .skill-category:hover,
-    .tags span:hover{
+    .tags span:hover,
+    .hero__contact a:hover{
 
-        transform:none;
+        transform:none !important;
 
-        box-shadow:none;
+        box-shadow:none !important;
 
-        background:inherit;
-
-        color:inherit;
+        transition:none !important;
 
     }
 
-    a{
+    .resume{
 
-        color:inherit;
+    zoom:0.82;
 
-        text-decoration:none;
+    transform-origin:top center;
 
     }
 
