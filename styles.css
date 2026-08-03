@@ -236,7 +236,9 @@ HERO
 
 .hero__photo{
 
-    justify-self:end;
+    justify-self:center;
+
+    transform:translateX(-70px);
 
 }
 
