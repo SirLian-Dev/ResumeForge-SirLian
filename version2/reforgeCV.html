@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Julián Ramírez López</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background: #ffffff; color: #333333; font-size: 11px; line-height: 1.4; }
+        .cv-container { display: flex; width: 100%; max-width: 800px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        
+        /* BARRA LATERAL IZQUIERDA */
+        .sidebar { width: 32%; background: #111111; color: #ffffff; padding: 20px 15px; }
+        .profile-img-container { width: 130px; height: 130px; margin: 0 auto 25px auto; border-radius: 50%; border: 3px solid #cc0000; overflow: hidden; background: #333; }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .sidebar-title { color: #ffffff; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px 0; border-left: 3px solid #cc0000; padding-left: 8px; }
+        .contact-item { margin-bottom: 8px; font-size: 10.5px; word-break: break-all; }
+        .contact-item a { color: #ffffff; text-decoration: none; }
+        .tech-subcat { color: #cc0000; font-size: 9.5px; font-weight: bold; text-transform: uppercase; margin-top: 10px; margin-bottom: 4px; }
+        .tech-list { list-style: none; padding-left: 5px; }
+        .tech-list li { margin-bottom: 3px; font-size: 10.5px; position: relative; padding-left: 10px; }
+        .tech-list li::before { content: "•"; color: #cc0000; position: absolute; left: 0; }
+        
+        /* Barras de nivel de dominio */
+        .skill-bar-container { margin-bottom: 6px; }
+        .skill-name { font-size: 10px; margin-bottom: 2px; color: #cccccc; }
+        .bar-bg { width: 100%; height: 4px; background: #333333; border-radius: 2px; position: relative; }
+        .bar-fill { height: 100%; background: #cc0000; border-radius: 2px; }
+        .bar-circle { width: 6px; height: 6px; background: #ffffff; border-radius: 50%; position: absolute; top: -1px; right: 0; box-shadow: 0 0 4px #cc0000; }
+
+        /* SECCIÓN PRINCIPAL DERECHA */
+        .main-content { width: 68%; padding: 30px 25px; }
+        .header-name { font-size: 36px; font-weight: bold; color: #111111; text-transform: uppercase; line-height: 0.9; letter-spacing: -1px; }
+        .header-lastName { color: #cc0000; }
+        .header-title { font-size: 13px; color: #555555; letter-spacing: 2px; margin-top: 5px; text-transform: uppercase; }
+        .header-badge { display: inline-block; background: #111111; color: #ffffff; font-size: 10px; font-weight: bold; padding: 4px 15px; margin-top: 8px; text-transform: uppercase; transform: skewX(-10deg); }
+        .header-badge span { display: block; transform: skewX(10deg); }
+        
+        .section-divider { margin: 20px 0; border-bottom: 1px solid #e0e0e0; }
+        
+        .main-section { display: flex; margin-bottom: 22px; }
+        .section-icon-container { width: 10%; }
+        .section-icon { width: 26px; height: 26px; background: #cc0000; border-radius: 50%; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; }
+        .section-body { width: 90%; padding-left: 5px; }
+        .section-h2 { font-size: 13px; font-weight: bold; color: #111111; text-transform: uppercase; margin-bottom: 10px; margin-top: 4px; }
+        
+        .p-profile { text-align: justify; color: #444444; margin-bottom: 8px; font-size: 11px; }
+        
+        .job-title-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-title { font-size: 11.5px; font-weight: bold; color: #111111; }
+        .job-date { font-size: 10px; color: #666666; font-weight: bold; }
+        .job-company { color: #cc0000; font-weight: bold; font-size: 10.5px; margin-bottom: 8px; }
+        
+        .project-item { margin-bottom: 12px; }
+        .project-name { font-weight: bold; color: #111111; margin-bottom: 3px; font-size: 11px; }
+        .project-desc { color: #444444; text-align: justify; margin-bottom: 4px; padding-left: 10px; border-left: 2px solid #cc0000; }
+        
+        .edu-item { margin-bottom: 10px; }
+        .edu-title { font-weight: bold; color: #111111; font-size: 11px; }
+        .edu-desc { color: #444444; text-align: justify; margin-bottom: 4px; padding-left: 10px; border-left: 2px solid #cc0000; }
+        .edu-meta { color: #cc0000; font-weight: bold; }
+
+        .lang-container { display: flex; justify-content: space-between; }
+        .lang-box { width: 48%; }
+        .lang-name { font-weight: bold; color: #111111; font-size: 11px; border-bottom: 2px solid #cc0000; display: inline-block; margin-bottom: 4px; }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <!-- BARRA LATERAL -->
+    <div class="sidebar">
+    
+        <div class="profile-img-container">
+            <img src=https://media.licdn.com/dms/image/v2/D4E03AQGxuj-fXBc1Sg/profile-displayphoto-scale_400_400/B4EZ69H1ABJIAk-/0/1781289408703?e=1787184000&v=beta&t=D7uyzhpSNksAHCgHTsukwtElhV3dnu7e3AUduAsoMDU alt="Julián Ramírez">
+        </div>
+        
+        <div class="sidebar-title">Contacto</div>
+        <div class="contact-item">📍 Caldas, Colombia (Remoto)</div>
+        <div class="contact-item">📞 +57 3216898192</div>
+        <div class="contact-item">✉️ <a href="mailto:sirlianjobs@gmail.com">sirlianjobs@gmail.com</a></div>
+        <div class="contact-item">🔗 <a href="https://linkedin.com/in/julian-ramirez-sirlian-dev" target="_blank">linkedin.com/in/julian-ramirez-sirlian-dev</a></div>
+        <div class="contact-item">💻 <a href="https://github.com/SirLian-Dev" target="_blank">github.com/SirLian-Dev</a></div>
+        
+        <div class="sidebar-title">Tech Skills</div>
+        
+        <div class="tech-subcat">Lenguajes</div>
+        <ul class="tech-list">
+            <li>Java</li>
+            <li>SQL</li>
+            <li>JavaScript</li>
+        </ul>
+        
+        <div class="tech-subcat">Back-end</div>
+        <ul class="tech-list">
+            <li>Spring Boot</li>
+            <li>Spring Data JPA</li>
+            <li>Hibernate</li>
+            <li>Maven</li>
+        </ul>
+      
+        <div class="tech-subcat">Front-end</div>
+        <ul class="tech-list">
+            <li>REACT(En Aprendizaje)</li>  
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaFX</li>
+        </ul>
+      
+        <div class="tech-subcat">Data Base & Tools</div>
+        <ul class="tech-list">
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>Postman</li>
+            <li>Swagger</li>
+            <li>JUnit</li>
+            <li>Git/GitHub</li>
+
+        </ul>
+        
+        <div class="tech-subcat">Development Environments</div>
+        <ul class="tech-list">
+            <li>Eclipse</li>
+            <li>VS Code</li>
+            <li>OpenCode</li>
+        </ul>
+    </div>
+    
+    <!-- SECCIÓN PRINCIPAL -->
+    <div class="main-content">
+        <div class="header-name">Julián <span class="header-lastName"><br>Ramírez López</span></div>
+        <div class="header-title">Full Stack Developer · Founder of CareerTrack</div>
+        <div class="header-badge"><span>Desarrollador de Software autodidacta especializado en ecosistema Java.</span></div>
+        
+        <div class="section-divider"></div>
+        
+        <!-- PERFIL PROFESIONAL -->
+        <div class="main-section">
+            <div class="section-icon-container"><div class="section-icon">⚡</div></div>
+            <div class="section-body">
+                <div class="section-h2">Perfil Profesional</div>
+                <p class="p-profile">
+                  Mi camino hacia el desarrollo de software comenzó fuera del sector tecnológico, con experiencia como Técnico Electricista fortalecí mi pensamiento lógico, 
+                  disciplina y capacidad para resolver problemas bajo estándares estrictos, así como con el trabajo bajo presión, concentración y agilidad en los entornos Gastronómicos.
+                  Durante los últimos años me he especializado de forma autodidacta en ingeniería de software, diseño de APIs REST, bases de datos relacionales y arquitectura de aplicaciones 
+                  utilizando Java y el ecosistema Spring.
+                  Hoy mi objetivo ya no es únicamente conseguir un empleo. Estoy construyendo productos reales que generen valor, mientras continúo creciendo como ingeniero de software 
+                  y buscando colaborar con diferentes equipos profesionales.
+                </p>
+            </div>
+        </div>
+        
+        <!-- EXPERIENCIA -->
+        <div class="main-section">
+            <div class="section-icon-container"><div class="section-icon">💼</div></div>
+            <div class="section-body">
+                <div class="section-h2">EXPERIENCIA</div>
+                
+                <div class="job-title-row">
+                    <div class="job-title">Full Stack Developer / Software Engineer</div>
+                </div>
+                <div class="job-company">SirLian-Dev — Open Source Portfolio</div>
+                
+                <div class="project-item">
+                    <div class="project-name">• Proyecto Principal: CareerTrack</div>
+                    <div class="project-desc">
+                      CareerTrack es el producto de software que actualmente desarrollo desde cero.
+                      El objetivo del proyecto es ayudar a profesionales a organizar, optimizar y potenciar su crecimiento laboral mediante herramientas tecnológicas accesibles.
+                      Como fundador participo en todas las etapas del desarrollo: investigación, arquitectura, backend, frontend, bases de datos, documentación técnica, diseño del producto y mejora continua.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-name">• Inventory Management API</div>
+                    <div class="project-desc">
+                      Backend para gestión de inventarios desarrollado con Java, Spring Boot y PostgreSQL siguiendo una arquitectura en capas, 
+                      manejo centralizado de excepciones y documentación mediante Swagger.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-name">• Digital Wallet API</div>
+                    <div class="project-desc">
+                      API REST para simulación de operaciones financieras con validación de reglas de negocio, DTOs, 
+                      persistencia relacional y documentación de endpoints mediante Postman.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-name">• Persistencia y pruebas técnicas:</div>
+                    <div class="project-desc">
+                      Modelado, normalización y manipulación de bases de datos relacionales con PostgreSQL. 
+                      Validación y documentación rigurosas de contratos de API mediante Postman y Swagger, garantizando la calidad del código a través de pruebas unitarias con JUnit.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-name">• Depuración y autogestión:</div>
+                    <div class="project-desc">
+                      Resolución independiente de problemas en entornos locales mediante el análisis de registros de errores y documentación técnica oficial, 
+                      utilizando diferentes entornos de desarrollo, IAs y Agentes.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- EDUCACIÓN -->
+        <div class="main-section">
+            <div class="section-icon-container"><div class="section-icon">🎓</div></div>
+            <div class="section-body">
+                <div class="section-h2">FORMACIÓN</div>
+              
+                <div class="edu-item">
+                    <div class="edu-title">Ingeniería de Software</div>
+                    <div class="edu-meta">(Formación Autodidacta)<span style="color:#666666; font-weight:normal;">| 2024 – 2026</span></div>
+                    <div class="edu-desc">Formación continua mediante el desarrollo de productos reales, estudio de arquitectura de software, documentación oficial y aprendizaje práctico.</div>
+                </div>
+              
+                <div class="edu-item">
+                    <div class="edu-title">Técnico en Gastronomía</div>
+                    <div class="edu-meta">CESDE (Universidad)<span style="color:#666666; font-weight:normal;">| 2017 – 2018</span></div>
+                  <div class="edu-desc">Formación técnica enfocada en planificación, organización, ejecución de procesos y trabajo bajo estándares de calidad en Hotelería y Turísmo.</div>
+                </div>
+              
+                <div class="edu-item">
+                    <div class="edu-title">Técnico Electricista Residencial </div>
+                    <div class="edu-meta">SENA (Servicio Nacional de Aprendizaje) <span style="color:#666666; font-weight:normal;">| 2015 – 2016</span></div>
+                  <div class="edu-desc">Formación técnica en instalaciones eléctricas residenciales, interpretación de planos, mantenimiento y aplicación de normas de seguridad.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- IDIOMAS -->
+        <div class="main-section">
+            <div class="section-icon-container"><div class="section-icon">🌐</div></div>
+            <div class="section-body">
+                <div class="section-h2">IDIOMAS</div>
+                <div class="lang-container">
+
+                    <div class="lang-box">
+                        <div class="lang-name">Inglés</div>
+                        <div style="color:#555555; font-weight: bold;">Intermedio (B1)</div>
+                        <div style="color:#666666; font-size:10px; margin-top:2px;">Capacidad para leer documentación técnica, escribir código limpio, comunicación técnica básica y proporcionar comentarios estructurados.</div>
+                    </div>
+                  
+                    <div class="lang-box">
+                        <div class="lang-name">Español</div>
+                        <div style="color:#555555;">Nativo</div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</body>
+</html>
